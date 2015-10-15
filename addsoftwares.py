@@ -34,7 +34,8 @@ def installAndriod():
 	os.system("ls -a ~/opt/local")
 	installDatabase();
 
-
+def installDjango():
+	os.system("pip install django");
 if(getpass.getuser()!="ehc"):
 	print "u must be a ehc employ"
 else:
@@ -43,17 +44,21 @@ path_user=os.environ['HOME']
 print path_user
 
 print socket.gethostname()
+applicationType=["ruby on rails","andriod development kits", "django"]
 
-print "enter your application type";
-print "type 1 for RUBy ";
-print "type 2 for andriod ";
+for  i in range(0,len(applicationType)):
+	print "    enter   " +str(i)+ "     for  " +applicationType[i];
+
 application_type=input()
+
 if(0<application_type<3):
-	if(application_type==1):
+	if(application_type==0):
 		print "ur application type is ruby all the depencices will be installed"
 		installRuby();
-	if(application_type==2):
+	if(application_type==1):
 		print "ur application type is andriod all the depencices wiill be installed"
 		installAndriod()
 
-
+	if(application_type==2):
+		print "ur applcation type is django all the dependcies will be installed"
+		installDjango()
